@@ -1,6 +1,6 @@
 const inquirer=require("inquirer");
 const fs=require("fs");
-//const { projectName } = require("process");
+const mitLicense= "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
 
 inquirer.prompt([{
 
@@ -91,15 +91,15 @@ inquirer.prompt([{
         if (value)
         {return true} else {return "Please make sure to let the user know about contributing to the repo"}
     }
-},{
+},
 
-    type:"message",
+  /*type:"message",
     name:"contact",
     message:"If you have questions regarding the repo, please feel free to contact me directly. My name is Nickolas Rivadeneira and you can reach me at 561-554-1243 or at email:nickemail@aol.com"
+ */
 
 
-
-}]).then(({
+]).then(({
     userName,
     emailAddress,
     projectName,
@@ -113,10 +113,11 @@ inquirer.prompt([{
 
 
 
-   /*  console.log(`${result.username} ${result.emailAddress} ${result.projectName} ${result.projectDescription} `)
+   /* using console log to test if the questions worked in my first draft console.log(`${result.username} ${result.emailAddress} ${result.projectName} ${result.projectDescription} `)
     console.log(`${result.value} ${result.installDependencies} ${result.runTest} ${result.userMessage} ${result.repoContribution}`) */
 }) => {
 //the "table of contents" for the read me
+
 const tableOfContent = `# ${projectName}
 *[Github] (#github)
 *[Email] (#email) 
