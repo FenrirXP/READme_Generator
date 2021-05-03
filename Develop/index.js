@@ -110,16 +110,40 @@ inquirer.prompt([{
     console.log(`${result.value} ${result.installDependencies} ${result.runTest} ${result.userMessage} ${result.repoContribution}`) */
 }) => {
 //the "table of contents" for the read me
-const tableOfContent = `${projectName}
+const tableOfContent = `# ${projectName}
+*[Github] (#github)
+*[Email] (#email) 
+*[Installation] (#installation)
+*[Description] (#description)
+*[User info] (#userInfo)
+*[License] (#license)
+*[Contribution] (#contribution)
+*[Tests] (#tests)
+*[Questions] (#questions)
 
 
+#Github
+${userName}
 
+##Email
+${emailAddress}
 
+##Installation
+${installDependencies}
 
+##Description
+${projectDescription}
 
+##User Info 
+${userMessage}
 
+##License
+${value}
 
+##Contribution
+${repoContribution}
 
+##Tests
+${runTest}`;
 
- `
 })
