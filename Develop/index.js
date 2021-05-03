@@ -1,10 +1,11 @@
 const inquirer=require("inquirer");
 const fs=require("fs");
+//const { projectName } = require("process");
 
 inquirer.prompt([{
 
     type:"input",
-    name:"username",
+    name:"userName",
     message:"What is your Github username?",
     //the validate is used so the user can't skip or accidentally hit enter and miss the question
     validate: (value) => {
@@ -90,6 +91,11 @@ inquirer.prompt([{
         if (value)
         {return true} else {return "Please make sure to let the user know about contributing to the repo"}
     }
+},{
+
+    type:"message",
+    name:"contact",
+    message:"If you have questions regarding the repo, please feel free to contact me directly. My name is Nickolas Rivadeneira and you can reach me at 561-554-1243 or at email:nickemail@aol.com"
 
 
 
@@ -102,7 +108,8 @@ inquirer.prompt([{
     installDependencies,
     runTest,
     userMessage,
-    repoContribution
+    repoContribution,
+    contact
 
 
 
@@ -119,7 +126,7 @@ const tableOfContent = `# ${projectName}
 *[License] (#license)
 *[Contribution] (#contribution)
 *[Tests] (#tests)
-*[Questions] (#questions)
+*[Contact Me] (#contact)
 
 
 #Github
@@ -144,6 +151,21 @@ ${value}
 ${repoContribution}
 
 ##Tests
-${runTest}`;
+${runTest}
 
-})
+##Contact Me
+${contact}`;
+
+createFile (projectName,tableOfContent);
+
+});
+
+function createFile(newFile,data) {
+    fs.writeFile(`./${newFile.toLowerCase().split("").join("")}md`,data,(err)=>{
+        if(err){
+            console.log(err)
+        }
+
+        console.log("Your READme file has been generated!!!")
+    })
+}
