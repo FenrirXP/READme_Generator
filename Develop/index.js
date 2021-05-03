@@ -1,6 +1,9 @@
 const inquirer=require("inquirer");
 const fs=require("fs");
 const mitLicense= "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
+const bsdlicense= "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
+const apachelicense= "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+
 
 inquirer.prompt([{
 
@@ -48,7 +51,7 @@ inquirer.prompt([{
     //used list because it allowed me to list the following items unlike choice which gave an error when I tried to run
     //the items in the array
     type:"list",
-    choices:["MIT","Apache 2.0","GPL 3.0","BSD 3","None"],
+    choices:["MIT","Apache 2.0","BSD 3","None"],
     name:"value",
     message:"Please choose a license",
    
