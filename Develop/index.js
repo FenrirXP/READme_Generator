@@ -4,7 +4,7 @@ let mitLicense= "[![License: MIT](https://img.shields.io/badge/License-MIT-yello
 let bsdlicense= "[![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)"
 let apachelicense= "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
 
-
+//the following are the prompts I used to create the questions for the user to input to use the generator
 inquirer.prompt([{
 
     type:"input",
@@ -104,6 +104,7 @@ inquirer.prompt([{
 
 },
 ]).then(({
+    //these are the values from the prompts used to define the generator
     userName,
     emailAddress,
     projectName,
@@ -120,7 +121,7 @@ inquirer.prompt([{
    /* using console log to test if the questions worked in my first draft console.log(`${result.username} ${result.emailAddress} ${result.projectName} ${result.projectDescription} `)
     console.log(`${result.value} ${result.installDependencies} ${result.runTest} ${result.userMessage} ${result.repoContribution}`) */
 }) => {
-//the "table of contents" for the read me
+//the "table of contents" for the read me and the outline of what will be generated when all the prompts have been answered 
 
 const tableOfContent = `# ${projectName}
 *[Github] (#github)
@@ -160,7 +161,7 @@ ${runTest}
 
 ##Contact Me
 ${contact}`;
-
+//the following code is what is used to create the READme generator
 createFile (projectName,tableOfContent);
 
 });
