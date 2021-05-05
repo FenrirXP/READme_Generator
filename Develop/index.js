@@ -95,14 +95,14 @@ inquirer.prompt([{
         if (value)
         {return true} else {return "Please make sure to let the user know about contributing to the repo"}
     }
-},
+},{
 
-  /*type:"message",
+    type:"list",
     name:"contact",
-    message:"If you have questions regarding the repo, please feel free to contact me directly. My name is Nickolas Rivadeneira and you can reach me at 561-554-1243 or at email:nickemail@aol.com"
- */
+    message:"If you have questions regarding the repo, please feel free to contact me directly. Below, you can choose from one of the following methods to reach me",
+    choices:["Phone Number:561-403-4192","Email:nickrivadeneira039@gmail.com","GitHub Link: https://github.com/FenrirXP/READme_Generator"]
 
-
+},
 ]).then(({
     userName,
     emailAddress,
